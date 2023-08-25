@@ -46,8 +46,8 @@ Neste projeto, verificamos se você é capaz de:
 <summary><strong>🗓 Data de Entrega</strong></summary>
 
 - Este projeto é individual
-- Serão `2` dias de projeto
-- Data de entrega para avaliação regular do projeto: `06/09/2023 14:00`
+- Serão `X` dias de projeto
+- Data de entrega para avaliação regular do projeto: `dd/mm/yyyy - 14:00h`
 
 </details>
 
@@ -242,7 +242,7 @@ Neste requisito, você deverá trazer todo o código que você implementou duran
 Tome cuidado especial com:
  - `pom.xml`: o `pom.xml` inicial das Fase C não é igual ao `pom.xml` da Fase B, então você não pode simplesmente substituílo. Cuide para transferir apenas as dependências que você incluiu, sem alterar as outras configurações do projeto.
  
-Durante os testes deste requisito, serão validadas as seguites rotas:
+Durante os testes deste requisito, serão validadas as seguintes rotas:
  - GET `/farms`
  - GET `/crops`
  - GET `/fertilizers`
@@ -262,10 +262,10 @@ Se quiser, nesta fase você já pode refatorar o código desse pacote e mover el
 
 A definição da rota é:
 - `/persons` (`POST`)
-    - deve receber o no corpo da requisição:
+    - deve receber no corpo da requisição:
       - `username`
       - `password`
-      - `roles` (conforme definito no enum `Role`, disponibilizado com o código)
+      - `roles` (conforme definido no enum `Role`, disponibilizado com o código)
     - deve criar a pessoa com os dados passados
     - deve responder com os campos `id`, `username` e `role` (mas não `password`)
 
@@ -353,7 +353,7 @@ Você deve retornar status 403 caso a pessoa não tenha permissões corretas. Do
 <details>
   <summary>Limitar acesso à rota GET /crops para pessoa autenticada com role correto</summary><br />
 
-Neste requisito você deve limitar o acesso à rota GET `/farms` para que apenas uma pessoa autenticada com role `MANAGER` ou `ADMIN` possa acessar.
+Neste requisito você deve limitar o acesso à rota GET `/crops` para que apenas uma pessoa autenticada com role `MANAGER` ou `ADMIN` possa acessar.
 
 Você deve retornar status 403 caso a pessoa não tenha permissões corretas. Do contrário, a rota deve retornar a resposta usual.
 
@@ -364,7 +364,7 @@ Você deve retornar status 403 caso a pessoa não tenha permissões corretas. Do
 <details>
   <summary>Limitar acesso à rota GET /fertilizers para pessoa autenticada com role correto</summary><br />
 
-Neste requisito você deve limitar o acesso à rota GET `/farms` para que apenas uma pessoa autenticada com role `ADMIN` possa acessar.
+Neste requisito você deve limitar o acesso à rota GET `/fertilizers` para que apenas uma pessoa autenticada com role `ADMIN` possa acessar.
 
 Você deve retornar status 403 caso a pessoa não tenha permissões corretas. Do contrário, a rota deve retornar a resposta usual.
 
@@ -379,7 +379,7 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 formulário.
 **Leva menos de 3 minutos!**
 
-[Formulário de avaliação do projeto](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_hidden=CH26-JAVA&template=betrybe/java-0x-projeto-final-agrix-fase-c)
+[Formulário de avaliação do projeto](https://be-trybe.typeform.com/to/ZTeR4IbH)
 
 </details>
 
