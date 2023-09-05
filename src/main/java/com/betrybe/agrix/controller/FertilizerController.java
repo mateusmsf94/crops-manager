@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,6 +45,7 @@ public class FertilizerController {
   }
 
   @GetMapping
+  @Secured({"ADMIN"})
   public ResponseEntity<?> getAllFertilizers() {
     List<Fertilizer> fertilizers = fertilizerService.getAllFertilizers();
     return ResponseEntity.ok(fertilizers);
@@ -58,6 +60,7 @@ public class FertilizerController {
    * @throws FertilizerNotFoundException if the Fertilizer entity is not found.
    */
   @GetMapping("/{id}")
+  @Secured({"ADMIN"})
   public ResponseEntity<Fertilizer> getFertilizer(@PathVariable Long id) {
     Fertilizer fertilizer = fertilizerService.getFertilizer(id)
             .orElseThrow(FertilizerNotFoundException::new);
