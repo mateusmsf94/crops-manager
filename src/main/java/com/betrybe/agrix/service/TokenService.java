@@ -44,4 +44,19 @@ public class TokenService {
             .toInstant(ZoneOffset.of("-03:00"));
   }
 
+  /**
+   * Validates a given JWT token.
+   *
+   * @param token the JWT token to validate.
+   * @return the username extracted from the token if it's valid.
+   * @throws com.auth0.jwt.exceptions.JWTVerificationException if the token is invalid.
+   */
+  public String validateToken(String token) {
+    Algorithm algorithm = Algorithm.HMAC256(secret);
+    return JWT.require(algorithm)
+            .withIssuer("agrix")
+            .build()
+            .verify(token)
+            .getSubject();
+  }
 }
