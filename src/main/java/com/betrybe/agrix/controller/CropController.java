@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -71,6 +72,7 @@ public class CropController {
   }
 
   @GetMapping("/crops")
+  @Secured({"MANAGER", "ADMIN"})
   public ResponseEntity<?> getAllCrops() {
     List<CropDto> crops = cropService.getAllCrops();
     return ResponseEntity.ok(crops);
@@ -84,6 +86,7 @@ public class CropController {
    * @throws CropNotFoundException if no crop with the given ID is found.
    */
   @GetMapping("/crops/{id}")
+  @Secured({"MANAGER", "ADMIN"})
   public ResponseEntity<CropDto> getCrop(@PathVariable Long id) {
     Crop crop = cropService.getCrop(id).orElseThrow(CropNotFoundException::new);
     CropDto cropDto = CropDto.fromCrop(crop);
